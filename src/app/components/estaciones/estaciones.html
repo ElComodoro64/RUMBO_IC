@@ -1,0 +1,35 @@
+<div class="componente-container">
+  <div *ngIf="cargando" class="cargando">
+    <p>Cargando estaciones...</p>
+  </div>
+
+  <div *ngIf="!cargando && estaciones.length === 0" class="sin-datos">
+    <p>Selecciona una comunidad autónoma para ver las estaciones.</p>
+  </div>
+
+  <div *ngIf="!cargando && estaciones.length > 0">
+    <p class="total">Mostrando 50 de {{totalEstaciones}} estaciones</p>
+    <table class="tabla-datos">
+      <thead>
+        <tr>
+          <th>Rótulo</th>
+          <th>Dirección</th>
+          <th>Municipio</th>
+          <th>Horario</th>
+          <th>Gasolina 95</th>
+          <th>Gasóleo A</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let e of estacionesPaginadas">
+          <td>{{e['Rótulo']}}</td>
+          <td>{{e['Dirección']}}</td>
+          <td>{{e['Municipio']}}</td>
+          <td>{{e['Horario']}}</td>
+          <td>{{e['Precio Gasolina 95 E5']}}</td>
+          <td>{{e['Precio Gasoleo A']}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

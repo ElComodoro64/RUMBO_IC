@@ -1,1 +1,122 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  color: #e8ecf2;
+  background: linear-gradient(135deg, #1b2735, #2e3c4f);
+  background-attachment: fixed;
+}
+
+/* ——— Material overrides ——— */
+.mat-mdc-tab-group {
+  background-color: transparent !important;
+}
+
+.mat-mdc-tab-header {
+  background-color: #263445 !important;
+  border-radius: 8px 8px 0 0;
+}
+
+.mat-mdc-tab .mdc-tab__text-label {
+  color: #c8d3e0 !important;
+}
+
+.mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+  color: #ffb347 !important;
+}
+
+.mdc-tab-indicator__content--underline {
+  border-color: #ffb347 !important;
+}
+
+.mat-mdc-form-field {
+  .mdc-outlined-text-field--outlined {
+    --mdc-outlined-text-field-outline-color: #3b4b5f;
+    --mdc-outlined-text-field-hover-outline-color: #82aaff;
+    --mdc-outlined-text-field-focus-outline-color: #ffb347;
+    --mdc-outlined-text-field-label-text-color: #c8d3e0;
+    --mdc-outlined-text-field-input-text-color: #e8ecf2;
+  }
+}
+
+.mat-mdc-select-value {
+  color: #e8ecf2 !important;
+}
+
+.mat-mdc-option {
+  background-color: #263445 !important;
+  color: #e8ecf2 !important;
+}
+
+.mat-mdc-option:hover {
+  background-color: #3a4b63 !important;
+}
+
+/* ——— Tablas ——— */
+.tabla-datos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 10pt;
+
+  th {
+    background-color: #1b2735;
+    color: #ffb347;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 2px solid #3b4b5f;
+  }
+
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #3b4b5f;
+    color: #e8ecf2;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #263445;
+  }
+
+  tr:hover td {
+    background-color: #2e3c4f;
+  }
+}
+
+/* ——— Mensajes ——— */
+.cargando, .sin-datos {
+  padding: 24px;
+  text-align: center;
+  color: #c8d3e0;
+  font-style: italic;
+}
+
+.total {
+  color: #82aaff;
+  font-size: 10pt;
+  margin: 12px 0 4px 0;
+}
+
+/* ——— Componentes ——— */
+.componente-container {
+  padding: 16px;
+}
+
+.filtros {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+
+  mat-form-field {
+    min-width: 220px;
+  }
+}

@@ -1,0 +1,190 @@
+.prototipo-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    color: #e8ecf2;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* ——— Header ——— */
+  .proto-header {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 0 0 12px 12px;
+    margin-bottom: 32px;
+    background-image: url('/olas.jpg');
+    background-size: cover;
+    background-position: center;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+  }
+  
+  .proto-header-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    h1 {
+      font-size: 56px;
+      letter-spacing: 12px;
+      color: #f0f3f7;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+    }
+  }
+  
+  .tagline {
+    color: #c8d3e0;
+    font-size: 13pt;
+    margin-top: 8px;
+    font-style: italic;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+  }
+  
+  /* ——— Intro ——— */
+  .intro {
+    background-color: #263445;
+    border: 1px solid #3b4b5f;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 32px;
+  
+    p {
+      color: #c8d3e0;
+      line-height: 1.7;
+      margin-bottom: 12px;
+      font-size: 10.5pt;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  /* ——— Flujo ——— */
+  .flujo {
+    margin-bottom: 32px;
+  
+    h2 {
+      color: #ffb347;
+      font-size: 16pt;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #3b4b5f;
+    }
+  }
+  
+  .pantalla {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: #263445;
+    border: 1px solid #3b4b5f;
+    border-radius: 8px;
+    padding: 24px;
+  
+    &.invertida {
+      flex-direction: row-reverse;
+      background-color: #1b2735;
+    }
+  }
+  
+  .pantalla-imagen {
+    flex-shrink: 0;
+    width: 160px;
+  
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid #3b4b5f;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+  }
+  
+  .pantalla-texto {
+    flex: 1;
+  
+    h3 {
+      color: #ffb347;
+      font-size: 13pt;
+      margin-bottom: 12px;
+    }
+  
+    p {
+      color: #c8d3e0;
+      line-height: 1.7;
+      font-size: 10.5pt;
+  
+      strong {
+        color: #f0f3f7;
+      }
+  
+      em {
+        color: #82aaff;
+        font-style: italic;
+      }
+    }
+  }
+  
+  /* ——— Conclusión ——— */
+  .conclusion {
+    background-color: #1b2735;
+    border-left: 4px solid #82aaff;
+    border-radius: 0 8px 8px 0;
+    padding: 24px;
+    margin-bottom: 32px;
+  
+    p {
+      color: #c8d3e0;
+      line-height: 1.7;
+      font-size: 10.5pt;
+      margin-bottom: 12px;
+    }
+  }
+  
+  .volver {
+    display: inline-block;
+    margin-top: 8px;
+    color: #82aaff;
+    text-decoration: none;
+    font-size: 10pt;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  
+    &:hover {
+      border-color: #82aaff;
+    }
+  }
+  
+  /* ——— Footer ——— */
+  .proto-footer {
+    text-align: center;
+    padding: 20px;
+    color: #6b7a8d;
+    font-size: 9.5pt;
+    font-style: italic;
+    border-top: 1px solid #3b4b5f;
+  }
+  
+  /* ——— Responsivo ——— */
+  @media (max-width: 640px) {
+    .pantalla, .pantalla.invertida {
+      flex-direction: column;
+    }
+  
+    .pantalla-imagen {
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+  }

@@ -1,0 +1,73 @@
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+  }
+  
+  /* ——— Header ——— */
+  .app-header {
+    position: relative;
+    height: 200px;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('/puerto.jpg');
+      background-size: cover;
+      background-position: center 60%;
+      filter: brightness(0.45);
+      z-index: 0;
+    }
+  }
+  
+  .app-title {
+    position: relative;
+    z-index: 1;
+    font-size: 48px;
+    font-weight: bold;
+    color: #f0f3f7;
+    letter-spacing: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+  
+  .app-subtitle {
+    position: relative;
+    z-index: 1;
+    color: #c8d3e0;
+    font-size: 11pt;
+    margin-top: 8px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+  }
+  
+  /* ——— Controles globales ——— */
+  .controls {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: #263445;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #3b4b5f;
+  
+    mat-form-field {
+      min-width: 260px;
+      flex: 1;
+    }
+  }
+  
+  /* ——— Tabs ——— */
+  .mat-mdc-tab-body-wrapper {
+    background-color: #263445;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #3b4b5f;
+    border-top: none;
+  }

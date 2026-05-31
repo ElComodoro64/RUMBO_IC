@@ -1,0 +1,55 @@
+<div class="componente-container">
+  <div class="filtros">
+    <mat-form-field appearance="outline">
+      <mat-label>Carburante</mat-label>
+      <mat-select [(ngModel)]="selectedProducto" (ngModelChange)="onFiltroChange()">
+        <mat-option *ngFor="let prod of productos" [value]="prod.IDProducto">
+          {{prod.NombreProducto}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="selectedFecha" (ngModelChange)="onFiltroChange()">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="cargando" class="cargando">
+    <p>Cargando precios...</p>
+  </div>
+
+  <div *ngIf="!cargando && !idProvincia" class="sin-datos">
+    <p>Selecciona una provincia arriba para consultar precios históricos.</p>
+  </div>
+
+  <div *ngIf="!cargando && idProvincia && selectedProducto && selectedFecha && precios.length === 0" class="sin-datos">
+    <p>No se encontraron datos para los filtros seleccionados.</p>
+  </div>
+
+  <div *ngIf="!cargando && precios.length > 0">
+    <p class="total">{{precios.length}} estaciones encontradas</p>
+    <table class="tabla-datos">
+      <thead>
+        <tr>
+          <th>Rótulo</th>
+          <th>Dirección</th>
+          <th>Municipio</th>
+          <th>Horario</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of precios">
+          <td>{{p['Rótulo']}}</td>
+          <td>{{p['Dirección']}}</td>
+          <td>{{p['Municipio']}}</td>
+          <td>{{p['Horario']}}</td>
+          <td>{{p['PrecioProducto']}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

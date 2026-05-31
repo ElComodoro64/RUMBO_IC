@@ -1,0 +1,37 @@
+<div class="componente-container">
+    <div *ngIf="cargando" class="cargando">
+      <p>Cargando postes marítimos...</p>
+    </div>
+  
+    <div *ngIf="!cargando && postes.length === 0" class="sin-datos">
+      <p>Selecciona una provincia para ver los postes marítimos.</p>
+    </div>
+  
+    <div *ngIf="!cargando && postes.length > 0">
+      <p class="total">{{postes.length}} postes encontrados</p>
+      <table class="tabla-datos">
+        <thead>
+          <tr>
+            <th>Rótulo</th>
+            <th>Dirección</th>
+            <th>Municipio</th>
+            <th>Puerto</th>
+            <th>Tipo Venta</th>
+            <th>Gasolina 95</th>
+            <th>Gasóleo A</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of postes">
+            <td>{{p['Rótulo']}}</td>
+            <td>{{p['Dirección']}}</td>
+            <td>{{p['Municipio']}}</td>
+            <td>{{p['Puerto']}}</td>
+            <td>{{p['Tipo Venta']}}</td>
+            <td>{{p['Precio Gasolina 95 E5']}}</td>
+            <td>{{p['Precio Gasoleo A habitual']}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
